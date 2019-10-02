@@ -1,49 +1,20 @@
 import React, { Component } from 'react';
+import Home from './pages/home/index.js';
+import Step1 from './pages/singup/step1/step1'
 
-class MeuBtn extends Component{
-     
-  render(){
-    return <button onClick={() => this.props.change(this.props.text)}>{this.props.text}</button>
-  }
-}
- class MeuTitulo extends Component{
+import './template/assets/css/normalize.css';
+import './template/assets/css/template.css';
+import './template/assets/css/style.css';
+
+ export default class App extends Component{
 
   render(){
    
-    return <h2> Você clicou no {this.props.MeuTitulo} </h2>
+    return <Step1/> //<Home/>
 
-  }
+  } 
 }
 
-export default class App extends Component{
-  constructor (props){
-    super(props);
-
-    this.state = {
-      btnAtual: ''
-    }
-
-  }
-
-  handleChange = (nome) => {
-    
-    this.setState({
-      BtnAtual: nome
-    })
-  }
-     render(){
-
-       return (
-         <>
-        
-        <MeuTitulo title={this.state.btnAtual} />
-        <MeuBtn change = {this.handleChange} text="Botao 01" />
-        <MeuBtn change = {this.handleChange} text="Botao 02" />
-        <MeuBtn change = {this.handleChange} text="Botao 03" />
 
 
-        </>
-       );
-     }
 
-}
